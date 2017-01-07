@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attach and forget about media management.">
+
+    <title> Rollup + Vue - Rahul Kadyan</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ff574a">
+    <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ff574a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="http://znck.me/assets/css/app.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light border-bottom">
+    <div class="container">
+        <a class="navbar-brand" href="http://znck.me/rollup-plugin-vue/" style="margin-right: 0">
+            Rollup + Vue
+        </a>
+        <a class="navbar-brand" href="http://znck.me/">
+            <span style="color: rgba(0, 0, 0, 0.25);">&nbsp;| Rahul Kadyan</span>
+        </a>
+        <div>
+            <div class="clearfix hidden-lg-up">
+                <a role="button" class="navbar-toggler float-xs-right" data-toggle="collapse"
+                   data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                   aria-label="Toggle navigation"></a>
+            </div>
+            <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+                <ul class="nav navbar-nav float-lg-right">
+                    <li class="nav-item">
+    <a class="nav-link" href="http://znck.me/">Home</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="http://znck.me/blog">Blog</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="http://sereno.in/projects">Projects</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="https://github.com/znck" target="_blank">Github</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="http://znck.me/about">About</a>
+</li>
+                </ul>
+                    <div class="docs hidden-lg-up">
+        <div class="sidebar">
+            <h1>Documentation</h1>
+            <h2>Prologue</h2>
+<ul>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/introduction">Introduction</a>
+</li>
+<li>
+<a target="\_blank" href="https://github.com/znck/rollup-plugin-vue">Github Repository</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/changelog">Release Notes</a>
+</li>
+</ul>
+<h2>Getting Started</h2>
+<ul>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/installation">Installation</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/configuration">Configuration</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/examples">Examples</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/advance">Advanced Usage</a>
+</li>
+</ul>
+<h2>Community</h2>
+<ul>
+<li>
+<a target="\_blank" href="https://github.com/znck/rollup-plugin-vue/issues">Issues &amp; Questions</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/contributing">Contribution Guide</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/conduct">Code of Conduct</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/license">License</a>
+</li>
+</ul>
+
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="body" style="min-height: 70vh">
+        <div class="docs">
+        <div class="docs-wrapper container">
+            <div class="row">
+                <section class="sidebar col-lg-3 mt-1 mb-1 hidden-md-down">
+            		<h2>Prologue</h2>
+<ul>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/introduction">Introduction</a>
+</li>
+<li>
+<a target="\_blank" href="https://github.com/znck/rollup-plugin-vue">Github Repository</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/changelog">Release Notes</a>
+</li>
+</ul>
+<h2>Getting Started</h2>
+<ul>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/installation">Installation</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/configuration">Configuration</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/examples">Examples</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/advance">Advanced Usage</a>
+</li>
+</ul>
+<h2>Community</h2>
+<ul>
+<li>
+<a target="\_blank" href="https://github.com/znck/rollup-plugin-vue/issues">Issues &amp; Questions</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/contributing">Contribution Guide</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/conduct">Code of Conduct</a>
+</li>
+<li>
+<a href="http://znck.me/rollup-plugin-vue/license">License</a>
+</li>
+</ul>
+
+                <hr style="margin-bottom: .5rem">
+<p>
+    <small>Built with &hearts; using <a href="http://github.com/serenohq/sereno" target="_blank">Sereno</a></small>
+</p>
+            	</section>
+
+            	<article class="col-xs-12 col-lg-9">
+            		<h1>Rollup Plugin for Vue</h1>
+<p>As vue-loader is for webpack and vueify is for browserify, similarly its for rollup. As we know, webpack and browserify concat stuff and make it runnable in browser. Its difficult to share .vue components. <strong>Now roll your <a href="http://vuejs.org/">Vue</a> components.</strong></p>
+<p>With rollup you can break your application into reusable modules.</p>
+<blockquote>
+<p>See <a href="http://znck.me/rollup-plugin-vue">docs</a> for installing, using and contributing.</p>
+</blockquote>
+<p><img src="http://znck.me/rollup-plugin-vue/content/assets/images/cover.png" alt="Rollup Plugin for Vue" /></p>
+<p align="center">
+  <a href="https://circleci.com/gh/znck/rollup-plugin-vue">
+    <img src="https://circleci.com/gh/znck/rollup-plugin-vue.svg?style=svg" alt="Build Status" />
+  </a>
+  <a href="https://coveralls.io/github/znck/rollup-plugin-vue?branch=master">
+    <img src="https://coveralls.io/repos/github/znck/rollup-plugin-vue/badge.svg?branch=master&style=flat-square" alt="Coverage Status" />
+  </a>
+  <a href="https://www.codacy.com/app/znck/rollup-plugin-vue">
+    <img src="https://api.codacy.com/project/badge/grade/e3402df0135240c29a1d25bab93932a0"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License" />
+  </a>
+  <a href="https://npmjs.org/package/rollup-plugin-vue">
+    <img src="https://img.shields.io/npm/v/rollup-plugin-vue.svg?style=flat-square" alt="NPM" />
+  </a>
+  <a href="https://github.com/znck/rollup-plugin-vue/releases">
+    <img src="https://img.shields.io/github/release/znck/rollup-plugin-vue.svg?style=flat-square" alt="Latest Version" />
+  </a>
+  <a href="https://github.com/znck/rollup-plugin-vue/issues">
+    <img src="https://img.shields.io/github/issues/znck/rollup-plugin-vue.svg?style=flat-square" alt="Issues" />
+  </a>
+</p>
+<h2>Quick Start</h2>
+<p>Create project with vue-cli!</p>
+<pre><code><span class="line">vue init znck/vue-plugin-simple my-project</span></code></pre>
+<p>Rollup! Rollup! Rollup!</p>
+<h3>Create new project</h3>
+<p><img src="create.gif" alt="" /></p>
+<h3>Install dependencies &amp; build</h3>
+<p><img src="build.gif" alt="" /></p>
+<h2>Usage</h2>
+<pre><code class="language-js"><span class="line"><span class="hljs-keyword">import</span> {rollup} <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup'</span>;</span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"></span>
+<span class="line">rollup({</span>
+<span class="line">	entry: <span class="hljs-string">'index.js'</span>,</span>
+<span class="line">	plugins: [vue()]</span>
+<span class="line">});</span></code></pre>
+<p>Below is how you can use it from the command line with Bublé.
+Run <code>rollup -c</code> and it will find the config.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-comment">// rollup.config.js</span></span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span></span>
+<span class="line"><span class="hljs-keyword">import</span> buble <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-buble'</span> <span class="hljs-comment">// rollup-plugin-babel also works</span></span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'index.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue(),</span>
+<span class="line">    buble()</span>
+<span class="line">  ]</span>
+<span class="line">}</span></code></pre>
+<h3>Examples</h3>
+<ul>
+<li>
+<a href="https://gist.github.com/znck/4ae3a705bccba0a3feecfa7b5f3da1ea">Vue 2.0 application</a>
+</li>
+<li>
+<a href="https://gist.github.com/znck/140d5e9deabfa41f2e935d053a59f23e">Vue component module/package</a>
+</li>
+</ul>
+<h3>Options</h3>
+<h4><code>css</code></h4>
+<pre><code class="language-js"><span class="line">vue({</span>
+<span class="line">  <span class="hljs-comment">// Filename to write all styles to</span></span>
+<span class="line">  css: <span class="hljs-string">'bundle.scss'</span>,</span>
+<span class="line"></span>
+<span class="line">  <span class="hljs-comment">// Callback that will be called ongenerate with two arguments:</span></span>
+<span class="line">  <span class="hljs-comment">// - styles: the contents of all style tags combined</span></span>
+<span class="line">  <span class="hljs-comment">// - styleNodes: an array of style objects: [{lang: 'css', content: 'body { color: green }'}]</span></span>
+<span class="line">  css: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">styles, styleNodes</span>) </span>{</span>
+<span class="line">    writeFileSync(cssPath, styles)</span>
+<span class="line">  }</span>
+<span class="line"></span>
+<span class="line">  <span class="hljs-comment">// Disable any style output or callbacks</span></span>
+<span class="line">  css: <span class="hljs-literal">false</span>,</span>
+<span class="line"></span>
+<span class="line">  <span class="hljs-comment">// Default behaviour is to write all styles to the bundle destination where .js is replaced by .css</span></span>
+<span class="line">  css: <span class="hljs-literal">null</span></span>
+<span class="line">})</span></code></pre>
+<h4><code>compileTemplate</code></h4>
+<pre><code class="language-js"><span class="line">vue({</span>
+<span class="line">  <span class="hljs-comment">// Compile templates to render functions (Vue 2 only)</span></span>
+<span class="line">  compileTemplate: <span class="hljs-literal">true</span>,</span>
+<span class="line">})</span></code></pre>
+<h4><code>htmlMinifier</code></h4>
+<p>Use any option from <a href="https://github.com/kangax/html-minifier">https://github.com/kangax/html-minifier</a></p>
+<pre><code class="language-js"><span class="line">vue({</span>
+<span class="line">  htmlMinifier: {}</span>
+<span class="line">})</span></code></pre>
+<h2>Change log</h2>
+<p>Please see <a href="CHANGELOG.md">CHANGELOG</a> for more information what has changed recently.</p>
+<h2>Testing</h2>
+<pre><code class="language-bash"><span class="line">$ npm run <span class="hljs-built_in">test</span></span></code></pre>
+<h2>Contributing</h2>
+<p>Please see <a href="CONTRIBUTING.md">CONTRIBUTING</a> and <a href="CONDUCT.md">CONDUCT</a> for details.</p>
+<h2>Security</h2>
+<p>If you discover any security related issues, please email hi@znck.me instead of using the issue tracker.</p>
+<h2>Credits</h2>
+<ul>
+<li>
+<a href="https://github.com/znck">Rahul Kadyan</a>
+</li>
+<li>
+<a href="https://github.com/thgh">Thomas Ghysels</a>
+</li>
+<li>
+<a href="https://github.com/posva">Eduardo San Martin Morote</a>
+</li>
+<li>
+<a href="../../contributors">All Contributors</a>
+</li>
+</ul>
+<h2>License</h2>
+<p>The MIT License (MIT). Please see <a href="LICENSE">License File</a> for more information.</p>
+            	</article>
+
+                <footer class="col-xs-12 hidden-lg-up">
+                    <hr style="margin-bottom: .5rem">
+<p>
+    <small>Built with &hearts; using <a href="http://github.com/serenohq/sereno" target="_blank">Sereno</a></small>
+</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<script src="http://znck.me/assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>
