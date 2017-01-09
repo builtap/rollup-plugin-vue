@@ -21,6 +21,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
     <link rel="manifest" href="/assets/icons/manifest.json">
+    <meta property="og:image" content="http://znck.me/rollup-plugin-vue/assets/images/cover.png">
     <meta name="msapplication-TileColor" content="#ff574a">
     <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ff574a">
@@ -32,7 +33,7 @@
 
 <body>
 <nav class="navbar navbar-light border-bottom">
-    <div class="container">
+    <div class="container fl">
         <a class="navbar-brand" href="http://znck.me/rollup-plugin-vue/" style="margin-right: 0">
             Rollup + Vue
         </a>
@@ -172,11 +173,21 @@
 
             	<article class="col-xs-12 col-lg-9">
             		<h1>Installation</h1>
-<p><a href="http://nodejs.org/">Node</a> and <a href="http://rollupjs.org">Rollup</a> are required to use rollup-plugin-vue.</p>
+<p><a href="http://nodejs.org/">Node</a> and <a href="http://rollupjs.org">Rollup</a> are required to use rollup-plugin-vue. Use <a href="https://www.npmjs.com/#getting-started">NPM</a> or <a href="http://yarnpkg.com/">yarn</a> to add <code>rollup-plugin-vue</code> as development dependency to your project.</p>
 <h3 id="npm"><a href="#npm"></a> Using NPM</h3>
 <pre><code><span class="line">npm install --save-dev rollup-plugin-vue</span></code></pre>
 <h3 id="yarn"><a href="#yarn"></a> Using yarn</h3>
 <pre><code><span class="line">yarn add --dev rollup-plugin-vue</span></code></pre>
+<h3>Next add <code>rollup-plugin-vue</code> to <code>rollup</code> plugins.</h3>
+<pre><code class="language-js"><span class="line"><span class="hljs-comment">// rollup.config.js</span></span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue(),</span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
+<h3><img class="emoji" alt="+1" src="//twemoji.maxcdn.com/2/72x72/1f44d.png" /> All set.</h3>
 <hr />
 <p><a href="https://github.com/znck/rollup-plugin-vue/edit/master/docs/configuration.md">Edit this page on Github</a>
 <a class="float-xs-right pl-1" href="/configuration">Configuration</a></p>

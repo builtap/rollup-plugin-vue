@@ -21,6 +21,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
     <link rel="manifest" href="/assets/icons/manifest.json">
+    <meta property="og:image" content="http://znck.me/rollup-plugin-vue/assets/images/cover.png">
     <meta name="msapplication-TileColor" content="#ff574a">
     <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ff574a">
@@ -32,7 +33,7 @@
 
 <body>
 <nav class="navbar navbar-light border-bottom">
-    <div class="container">
+    <div class="container fl">
         <a class="navbar-brand" href="http://znck.me/rollup-plugin-vue/" style="margin-right: 0">
             Rollup + Vue
         </a>
@@ -172,9 +173,207 @@
 
             	<article class="col-xs-12 col-lg-9">
             		<h1>Configuration</h1>
+<p>For most cases <code>rollup-plugin-vue</code> works out of the box. But, you can always configure it to your needs.</p>
+<p>Following configuration are available to be overridden.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th align="center">Vue 0.11</th>
+<th align="center">Vue 0.12</th>
+<th align="center">Vue 1.0</th>
+<th align="center">Vue 2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#css">css</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#compileTemplate">compileTemplate</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#styleToImports">styleToImports</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#stripWith">stripWith</a></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#exclude">include</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#exclude">exclude</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#htmlMinifier">htmlMinifier</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#vue">vue</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td><a href="#vue">inject</a></td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="css">The <code>css</code> option</h3>
+<p>It accepts a filename, <code>false</code>, <code>null</code> or a <code>Function</code>.</p>
+<ul>
+<li>
+<p><strong><code>null</code></strong> – If your rollup config defines <code>dest</code> then it would generate a css file with same name as defined in <code>dest</code>, else a file named <code>bundle.css</code> is generated. This is the default behavior.</p>
+<p>Following script would export styles to <code>dist/my-package.css</code>.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-comment">// rollup.plugin.js</span></span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'src/index.js'</span>,</span>
+<span class="line">  dest: <span class="hljs-string">'dist/my-package.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue({ css: <span class="hljs-literal">null</span> }), <span class="hljs-comment">// or  vue()</span></span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
+</li>
+<li>
+<p><strong>filename</strong> – Combined css styles are exported to this file.</p>
+<p>Following script would export styles to <code>dist/styles.scss</code>.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-comment">// rollup.plugin.js</span></span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'src/index.js'</span>,</span>
+<span class="line">  dest: <span class="hljs-string">'dist/my-package.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue({ css: <span class="hljs-string">'dist/styles.scss'</span> }),</span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
+</li>
+<li>
+<p><strong><code>false</code></strong> – Ignore all styles.</p>
+<p>Following script would not export styles at all.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-comment">// rollup.plugin.js</span></span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'src/index.js'</span>,</span>
+<span class="line">  dest: <span class="hljs-string">'dist/my-package.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue({ css: <span class="hljs-literal">false</span> }),</span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
+</li>
+<li>
+<p><strong><code>Function</code></strong> – In a custom style handler function you can do what ever you want.</p>
+<p>The <code>css</code> handler would receive 2 parameters.</p>
+<ul>
+<li>content (String) – A string containing content of all style tags across all .vue files.</li>
+<li>styles (Array) – An array containing all style nodes. A node is of following format.
+<pre><code class="language-js"><span class="line">{</span>
+<span class="line">  id: <span class="hljs-built_in">String</span>, <span class="hljs-comment">// Absolute file path of the component.</span></span>
+<span class="line">  code: <span class="hljs-built_in">String</span>, <span class="hljs-comment">// Content of the style tag.</span></span>
+<span class="line">  lang: <span class="hljs-built_in">String</span>, <span class="hljs-comment">// Language defined by lang attribute on style tag. (Default: css)</span></span>
+<span class="line">}</span></code></pre>
+</li>
+</ul>
+<p>Following script would generate <code>.scss</code> file for every component.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-comment">// rollup.plugin.js</span></span>
+<span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"><span class="hljs-keyword">import</span> fs <span class="hljs-keyword">from</span> <span class="hljs-string">'fs'</span>;</span>
+<span class="line"><span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'src/index.js'</span>,</span>
+<span class="line">  dest: <span class="hljs-string">'dist/my-package.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue({</span>
+<span class="line">      css(content, styles) {</span>
+<span class="line">        <span class="hljs-comment">// ¯\_(ツ)_/¯ do whatever you want to do.</span></span>
+<span class="line">        styles.forEach(({ id, content }) =&gt; {</span>
+<span class="line">          <span class="hljs-keyword">const</span> filename = path.basename(id).replace(<span class="hljs-regexp">/\.vue$/</span>, <span class="hljs-string">'.scss'</span>);</span>
+<span class="line"></span>
+<span class="line">          fs.writeFileSync(<span class="hljs-string">`dist/scss/<span class="hljs-subst">${filename}</span>`</span>, content);</span>
+<span class="line">        });</span>
+<span class="line">      },</span>
+<span class="line">    }),</span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
+</li>
+</ul>
+<h3 id="compileTemplate">The <code>compileTemplate</code> option</h3>
+<p>With Vue 2.0, you can have <a href="https://vuejs.org/v2/guide/installation.html#Standalone-vs-Runtime-only-Build">two builds</a>; Runtime-only and Standalone.
+Runtime-only build does not include template compiler. So, it is required compile <code>template</code> string to <code>render</code> function.</p>
+<p>This option takes <code>boolean</code> value.</p>
+<ul>
+<li>
+<code>true</code> – Always compile to <code>render</code> function.</li>
+<li>
+<code>false</code> – Do not compile <code>template</code> string.</li>
+<li>You can ignore this option at all.</li>
+</ul>
+<p><strong>NOTE:</strong> If <code>compileTemplate</code> is not set and Vue 2.0 is in project dependencies, then it would compile to <code>template</code> to <code>render</code> function.</p>
+<h3 id="styleToImports">The <code>styleToImports</code> option</h3>
 <blockquote>
-<p>WIP</p>
+<p>[WIP]</p>
 </blockquote>
+<h3 id="stripWith">The <code>stripWith</code> option</h3>
+<blockquote>
+<p>[WIP]</p>
+</blockquote>
+<h3 id="include">The <code>include</code> option</h3>
+<blockquote>
+<p>[WIP]</p>
+</blockquote>
+<h3 id="exclude">The <code>exclude</code> option</h3>
+<blockquote>
+<p>[WIP]</p>
+</blockquote>
+<h3 id="htmlMinifier">The <code>htmlMinifier</code> option</h3>
+<blockquote>
+<p>[WIP]</p>
+</blockquote>
+<h3 id="vue">The <code>vue</code> option</h3>
+<blockquote>
+<p>[WIP]</p>
+</blockquote>
+<h3 id="inject">The <code>inject</code> option</h3>
+<blockquote>
+<p>[WIP]</p>
+</blockquote>
+<p><br><br><br></p>
 <hr />
 <p><a href="https://github.com/znck/rollup-plugin-vue/edit/master/docs/configuration.md">Edit this page on Github</a>
 <a class="float-xs-right pl-1" href="/examples">Examples</a></p>
