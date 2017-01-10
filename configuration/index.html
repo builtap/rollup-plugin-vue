@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Attach and forget about media management.">
 
     <title> Rollup + Vue - Rahul Kadyan</title>
+    <meta name="og:title" content=" Rollup + Vue">
+    <meta name="twitter:title" content=" Rollup + Vue">
+
+    <meta name="description" content="Roll your vues (Rollup plugin to compile .vue files)">
+    <meta name="og:description" content="Roll your vues (Rollup plugin to compile .vue files)">
+    <meta name="twitter:description" content="Roll your vues (Rollup plugin to compile .vue files)">
+
+    <meta property="og:image" content="http://znck.me/rollup-plugin-vue/assets/images/cover.png">
+    <meta property="twitter:image" content="http://znck.me/rollup-plugin-vue/assets/images/cover.png">
+
+    <link rel="manifest" href="/assets/icons/manifest.json">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
@@ -20,8 +30,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-    <link rel="manifest" href="/assets/icons/manifest.json">
-    <meta property="og:image" content="http://znck.me/rollup-plugin-vue/assets/images/cover.png">
+
     <meta name="msapplication-TileColor" content="#ff574a">
     <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ff574a">
@@ -87,12 +96,6 @@
 <li>
 <a href="http://znck.me/rollup-plugin-vue/configuration">Configuration</a>
 </li>
-<li>
-<a href="http://znck.me/rollup-plugin-vue/examples">Examples</a>
-</li>
-<li>
-<a href="http://znck.me/rollup-plugin-vue/advance">Advanced Usage</a>
-</li>
 </ul>
 <h2>Community</h2>
 <ul>
@@ -142,12 +145,6 @@
 <li>
 <a href="http://znck.me/rollup-plugin-vue/configuration">Configuration</a>
 </li>
-<li>
-<a href="http://znck.me/rollup-plugin-vue/examples">Examples</a>
-</li>
-<li>
-<a href="http://znck.me/rollup-plugin-vue/advance">Advanced Usage</a>
-</li>
 </ul>
 <h2>Community</h2>
 <ul>
@@ -178,7 +175,7 @@
 <table>
 <thead>
 <tr>
-<th>Option</th>
+<th align="left">Option</th>
 <th align="center">Vue 0.11</th>
 <th align="center">Vue 0.12</th>
 <th align="center">Vue 1.0</th>
@@ -187,63 +184,56 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#css">css</a></td>
+<td align="left"><a href="#css">css</a></td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#compileTemplate">compileTemplate</a></td>
+<td align="left"><a href="#compileTemplate">compileTemplate</a></td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#styleToImports">styleToImports</a></td>
+<td align="left"><a href="#styleToImports">styleToImports</a></td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#stripWith">stripWith</a></td>
+<td align="left"><a href="#stripWith">stripWith</a></td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td align="center">-</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#exclude">include</a></td>
+<td align="left"><a href="#exclude">include</a></td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#exclude">exclude</a></td>
+<td align="left"><a href="#exclude">exclude</a></td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#htmlMinifier">htmlMinifier</a></td>
+<td align="left"><a href="#htmlMinifier">htmlMinifier</a></td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 </tr>
 <tr>
-<td><a href="#vue">vue</a></td>
-<td align="center">✓</td>
-<td align="center">✓</td>
-<td align="center">✓</td>
-<td align="center">✓</td>
-</tr>
-<tr>
-<td><a href="#vue">inject</a></td>
+<td align="left"><a href="#vue">inject</a></td>
 <td align="center">✓</td>
 <td align="center">✓</td>
 <td align="center">✓</td>
@@ -346,33 +336,56 @@ Runtime-only build does not include template compiler. So, it is required compil
 </ul>
 <p><strong>NOTE:</strong> If <code>compileTemplate</code> is not set and Vue 2.0 is in project dependencies, then it would compile to <code>template</code> to <code>render</code> function.</p>
 <h3 id="styleToImports">The <code>styleToImports</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
+<p>Other than <code>css</code> option, the plugin allows you to convert your styles to javascript imports.</p>
+<p>Following script defers styles handling.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"><span class="hljs-keyword">import</span> css <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-css-only'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'src/index.js'</span>,</span>
+<span class="line">  dest: <span class="hljs-string">'dist/my-package.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue({ styleToImports: <span class="hljs-literal">true</span> }),</span>
+<span class="line">    css(),</span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
 <h3 id="stripWith">The <code>stripWith</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
+<p>For Vue 2.0 builds, <code>with(this)</code> is stripped off by default. You can disable this by setting <code>{ stripWith: false }</code>.</p>
 <h3 id="include">The <code>include</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
+<p>A minimatch pattern or an array of minimatch patterns as required for <a href="https://github.com/rollup/rollup/wiki/Plugins#creating-plugins">Rollup</a> transformer plugins.</p>
 <h3 id="exclude">The <code>exclude</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
+<p>A minimatch pattern or an array of minimatch patterns as required for <a href="https://github.com/rollup/rollup/wiki/Plugins#creating-plugins">Rollup</a> transformer plugins.</p>
 <h3 id="htmlMinifier">The <code>htmlMinifier</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
-<h3 id="vue">The <code>vue</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
+<p>The template string is minified using <a href="https://github.com/kangax/html-minifier">htmlMinifier</a>. The default configuration used with htmlMinifier is as follows:</p>
+<pre><code class="language-js"><span class="line">{</span>
+<span class="line">    customAttrSurround: [[<span class="hljs-regexp">/@/</span>, <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">''</span>)], [<span class="hljs-regexp">/:/</span>, <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">''</span>)]],</span>
+<span class="line">    collapseWhitespace: <span class="hljs-literal">true</span>,</span>
+<span class="line">    removeComments: <span class="hljs-literal">true</span>,</span>
+<span class="line">}</span></code></pre>
+<p>You can add any supported option here.</p>
+<pre><code class="language-js"><span class="line"><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">'rollup-plugin-vue'</span>;</span>
+<span class="line"></span>
+<span class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {</span>
+<span class="line">  entry: <span class="hljs-string">'src/index.js'</span>,</span>
+<span class="line">  dest: <span class="hljs-string">'dist/my-package.js'</span>,</span>
+<span class="line">  plugins: [</span>
+<span class="line">    vue({</span>
+<span class="line">      htmlMinifier: {</span>
+<span class="line">        removeRedundantAttributes: <span class="hljs-literal">true</span>, <span class="hljs-comment">// This would remove duplicate attributes.</span></span>
+<span class="line">        removeComments: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Keep comments.</span></span>
+<span class="line">      },</span>
+<span class="line">    }),</span>
+<span class="line">  ],</span>
+<span class="line">};</span></code></pre>
 <h3 id="inject">The <code>inject</code> option</h3>
-<blockquote>
-<p>[WIP]</p>
-</blockquote>
+<p>A custom <code>inject</code> function to add <code>template</code> or <code>render</code> function to component. It would receive 3 parameters:</p>
+<ul>
+<li>script (String) – Contents of script tag.</li>
+<li>template/render (String) – Processed template or compiled render function.</li>
+<li>lang (String) – Language of script. (Inferred from <code>lang</code> attribute on <code>&lt;script&gt;</code> tag.)</li>
+</ul>
+<p>The <code>inject</code> function should return processed script string.</p>
+<p>For reference, checkout <a href="https://github.com/znck/rollup-plugin-vue/blob/master/src/vueTransform.js#L43-L61">inject function</a> for <code>lang=js</code> or <code>lang=babel</code>.</p>
 <p><br><br><br></p>
 <hr />
 <p><a href="https://github.com/znck/rollup-plugin-vue/edit/master/docs/configuration.md">Edit this page on Github</a>
